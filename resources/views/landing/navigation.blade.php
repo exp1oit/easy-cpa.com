@@ -24,46 +24,24 @@
             <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
               <ul class="nav__menu">
                 <li class="active">
-                  <a href="https://deothemes.com/envato/margin/html/index.html">Home</a>
-                </li>
-                <li class="nav__dropdown">
-                  <a href="https://deothemes.com/envato/margin/html/index.html#">Pages</a>
-                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="https://deothemes.com/envato/margin/html/about.html">About</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/services.html">Services</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/pricing.html">Pricing</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/contact.html">Contact</a></li>
-                  </ul>
-                </li>
-                <li class="nav__dropdown">
-                  <a href="https://deothemes.com/envato/margin/html/blog.html">Features</a>
-                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="https://deothemes.com/envato/margin/html/icons.html">Icons</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/elements.html">Elements</a></li>
-                  </ul>
-                </li>
-                <li class="nav__dropdown">
-                  <a href="https://deothemes.com/envato/margin/html/blog.html">Blog</a>
-                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="https://deothemes.com/envato/margin/html/blog.html">Blog Posts</a></li>
-                    <li><a href="https://deothemes.com/envato/margin/html/single-post.html">Single Post</a></li>
-                  </ul>
+                  <a href="https://deothemes.com/envato/margin/html/index.html">Офферы</a>
                 </li>
                 <li>
-                  <a href="https://deothemes.com/envato/margin/html/index.html#">Purchase</a>
+                  <a href="https://deothemes.com/envato/margin/html/index.html#">Рекламодателю</a>
+                </li>
+                <li>
+                  <a href="https://deothemes.com/envato/margin/html/index.html#">Вебмастеру</a>
+                </li>
+                <li>
+                  <a href="https://deothemes.com/envato/margin/html/index.html#">Регистрация</a>
+                </li>
+                <li>
+                  <a href="https://deothemes.com/envato/margin/html/index.html#">Вход</a>
                 </li>
               </ul> <!-- end menu -->
             </nav> <!-- end nav-wrap -->
 
             <div class="nav__btn-holder nav--align-right">
-              <a href="https://deothemes.com/envato/margin/html/index.html#" class="btn nav__btn">
-                <span class="nav__btn-text">Call us for Free</span>
-                <span class="nav__btn-phone">63-995-3959</span>
-              </a>
             </div>
 
           </div> <!-- end flex-parent -->

@@ -3510,3 +3510,9 @@ dd {
 	border-bottom: 1px solid #E8ECED; }
 
 /*# sourceMappingURL=style.css.map */
+
+.btn-reg {
+	width: 40%;
+    align-content: center;
+    margin-left: 29%;
+}
