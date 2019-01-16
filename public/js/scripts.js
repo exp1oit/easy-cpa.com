@@ -199,3 +199,18 @@
   });
 
 })(jQuery);
+
+$('#login').click(function() {
+    $('#loginModal').modal('show');
+});
+
+$('.registr').click(function() {
+  $('#registrModal').modal('show');
+});
+
+$('#resetpassword').click(function() {
+  console.log(1);
+  $('#loginModal').modal('toggle');
+  $('#resetpasswordModal').modal('show');
+});
+
