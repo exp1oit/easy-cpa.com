@@ -4,10 +4,10 @@
             <div class="call-to-action box-shadow-large text-center">
                 <div class="call-to-action__container">
                     <h3 class="call-to-action__title">
-                        Take your business to the next level
+                        Начни зарабатывать уже сегодня
                     </h3>
-                    <a href="https://deothemes.com/envato/margin/html/index.html#" class="btn btn--lg btn--color">
-                        <span>Let’s Work Together</span>
+                    <a class="btn btn--lg btn--color signUp">
+                        <span>Зарегистрироваться</span>
                     </a>
                 </div>
             </div>

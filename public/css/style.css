@@ -3428,6 +3428,7 @@ dd {
 /* Hovers
 -------------------------------------------------------*/
 .hover-up {
+	height: 100%;
 	top: 0;
 	position: relative;
 	transition: all 0.2s ease-in-out; }
@@ -3649,4 +3650,17 @@ a.h2{
 
 #resetpassword {
 	margin-bottom: 7px;
+}
+
+a.btn > span {
+	color: white;
+}
+
+.rub-list-element {
+	margin-right: 24px;
+    margin-left: 5em;
+}
+
+.display-none {
+	display: none;
 }

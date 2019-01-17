@@ -36,7 +36,7 @@
                             <a href="https://deothemes.com/envato/margin/html/index.html#">Вебмастеру</a>
                         </li>
                         <li>
-                            <a class="registr" role="button" data-toggle="modal" data-target="#login-modal">Регистрация</a>
+                            <a class="singUp" role="button" data-toggle="modal" data-target="#login-modal">Регистрация</a>
                         </li>
                         <li>
                             <a id="login"  role="button" data-toggle="modal" data-target="#login-modal">Авторизация</a>
@@ -56,9 +56,9 @@
                                     <div class="input-group mb-3 w-75 mx-auto">
                                         <input type="email" class="form-control" placeholder="Email" aria-describedby="button-addon1" required>
                                         <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon1" required>
-                                         <a class="h2" id="resetpassword" >Востоновление пароля</a>
+                                        <a class="h2" id="resetpassword">Востоновление пароля</a>
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button" id="button-addon1">Войти</button>
+                                            <button class="btn btn-primary" type="submit" id="button-addon1">Войти</button>
                                         </div>
                                     </div>
                                 </form>
@@ -68,23 +68,22 @@
                     </div>
                 </div>
 
-
-                <div class="modal fade text-center py-5 my-model" id="registrModal" tabindex="-1" role="dialog"
+                <div class="modal fade text-center py-5 my-model" id="singUpModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="top-strip"></div>
                                 <h3 class="pt-5 mb-0 text-secondary">Регистрация</h3>
-                                <form method="POST" action="{{ route('register') }}">
+                                <form method="POST" id="singUpForm" action="{{ route('register') }}">
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
-                                        <input type="text" class="form-control" placeholder="ФИО" aria-describedby="button-addon2" required>
-                                        <input type="email" class="form-control" placeholder="email" aria-describedby="button-addon2" required>
-                                        <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon2" required>
-                                        <input type="password" placeholder="Повторите пароль" class="form-control"  aria-describedby="button-addon2" name="password_confirmation" required>
+                                        <input name="name" type="text" class="form-control" placeholder="ФИО" aria-describedby="button-addon2" required>
+                                        <input name="email" type="email" class="form-control" placeholder="email" aria-describedby="button-addon2" required>
+                                        <input name="password" id="password" type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon2" required>
+                                        <input name="password_confirmation" id="password-confirm" type="password" placeholder="Повторите пароль" class="form-control"  aria-describedby="button-addon2" name="password_confirmation" required>
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary btn-modal" type="button" id="button-addon2">Зарегистрироваться</button>
+                                            <button class="btn btn-primary btn-modal" id="singUp" type="button" id="button-addon2">Зарегистрироваться</button>
                                         </div>
                                     </div>
                                 </form>
@@ -102,15 +101,13 @@
                             <div class="modal-body">
                                 <div class="top-strip"></div>
                                 <h3 class="pt-5 mb-0 text-secondary">Востоновление пароля</h3>
-                                <form method="POST" action="{{ route('register') }}">
+                                <form method="POST" action="{{ route('password.email') }}" id="resetPasswordForm">
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
-                                        <input type="text" class="form-control" placeholder="ФИО" aria-describedby="button-addon2" required>
-                                        <input type="email" class="form-control" placeholder="email" aria-describedby="button-addon2" required>
-                                        <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon2" required>
-                                        <input type="password" placeholder="Повторите пароль" class="form-control"  aria-describedby="button-addon2" name="password_confirmation" required>
+                                        <input name="name" type="text" class="form-control" placeholder="ФИО" required>
+                                        <input name="email" type="email" class="form-control" placeholder="email" required>
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary btn-modal" type="button" id="button-addon2">Зарегистрироваться</button>
+                                            <button class="btn btn-primary btn-modal" type="button" id="resetPasswordButton">Востоновление пароля</button>
                                         </div>
                                     </div>
                                 </form>

@@ -13,6 +13,8 @@
   <link rel="apple-touch-icon" sizes="72x72" href="https://deothemes.com/envato/margin/html/img/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="https://deothemes.com/envato/margin/html/img/apple-touch-icon-114x114.png">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
   <style type="text/css">
     :root .GKJYXHBF2>.GKJYXHBE2>.GKJYXHBH5,
     :root a[href^="http://ffxitrack.com/"],

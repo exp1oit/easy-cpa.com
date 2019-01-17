@@ -13,7 +13,7 @@
                 <!-- Optin Form -->
                 <div class="optin">
                     <div class="optin__form">
-                        <button class="optin__btn btn btn--md btn--color btn--button btn-reg registr" data-toggle="modal" data-target="#login-modal">Зарегистрироваться</button>
+                        <button class="optin__btn btn btn--md btn--color btn--button btn-reg singUp" data-toggle="modal" data-target="#login-modal">Зарегистрироваться</button>
                     </div> 
                 </div>
             </div>

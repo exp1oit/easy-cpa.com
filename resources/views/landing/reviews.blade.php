@@ -10,18 +10,16 @@
                 <div id="owl-testimonials" class="owl-carousel owl-theme owl-carousel--arrows-outside owl-loaded owl-drag">
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(-950px, 0px, 0px); transition: all 0s ease 0s; width: 3800px;">
-                            @for ($i = 0; $i <= 5; $i++)
+                            @for ($i = 0; $i < 1; $i++)
                                 <div class="owl-item cloned" style="width: 435px; margin-right: 40px;">
                                     <div class="testimonial clearfix">
-                                        <img src="{{asset('img/1.png')}}" alt="" class="testimonial__img">
+                                        <img src="{{asset('img/girl.jpg')}}" alt="" class="testimonial__img">
                                         <div class="testimonial__info">
-                                            <span class="testimonial__author">Joeby Ragpa</span>
-                                            <span class="testimonial__company">DeoThemes</span>
+                                            <span class="testimonial__author">Виктория А.</span>
                                         </div>
                                         <div class="testimonial__body">
-                                            <p class="testimonial__text">“I have witnessed and admired the work for years.
-                                                I highly
-                                                recommend this work for anyone seeking to increase.”</p>
+                                            <p class="testimonial__text">“Реальный способ заработать приличные деньги сидя дома. За первую неделю продала 3 сумки. 
+                                            Для начала это отлично). Не сомневайтесь и пробуйте!”</p>
                                             <div class="testimonial__rating">
                                                 <i class="ui-star"></i>
                                                 <i class="ui-star"></i>
@@ -40,9 +38,7 @@
                                             <span class="testimonial__company">DeoThemes</span>
                                         </div>
                                         <div class="testimonial__body">
-                                            <p class="testimonial__text">“Every detail has been taken care these team are
-                                                realy amazing
-                                                and talented! I will work only to help your sales goals.”</p>
+                                            <p class="testimonial__text">“Отличный сервис. В первые несколько дней продал свою первую вещь.”</p>
                                             <div class="testimonial__rating">
                                                 <i class="ui-star"></i>
                                                 <i class="ui-star"></i>
@@ -56,8 +52,8 @@
                             @endfor
                         </div>
                     </div>
-                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ui-arrow-left"></i></button><button
-                            type="button" role="presentation" class="owl-next"><i class="ui-arrow-right"></i></button></div>
+                    {{--  <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ui-arrow-left"></i></button><button
+                            type="button" role="presentation" class="owl-next"><i class="ui-arrow-right"></i></button></div>  --}}
                     <div class="owl-dots disabled"></div>
                 </div> <!-- end owl-carousel -->
             </div>
