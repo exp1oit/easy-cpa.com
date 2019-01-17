@@ -56,6 +56,8 @@
                                     <div class="input-group mb-3 w-75 mx-auto">
                                         <input type="email" class="form-control" placeholder="Email" aria-describedby="button-addon1" required>
                                         <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon1" required>
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" 'checked'>
+                                        <br>
                                         <a class="h2" id="resetpassword">Востоновление пароля</a>
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="submit" id="button-addon1">Войти</button>
