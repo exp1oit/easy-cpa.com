@@ -58,7 +58,7 @@
                                         <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon1" required>
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" 'checked'>
                                         <br>
-                                        <a class="h2" id="resetpassword">Востоновление пароля</a>
+                                        <a class="h2" id="resetpassword">Востановление пароля</a>
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="submit" id="button-addon1">Войти</button>
                                         </div>
@@ -102,14 +102,13 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="top-strip"></div>
-                                <h3 class="pt-5 mb-0 text-secondary">Востоновление пароля</h3>
+                                <h3 class="pt-5 mb-0 text-secondary">Востановление пароля</h3>
                                 <form method="POST" action="{{ route('password.email') }}" id="resetPasswordForm">
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
-                                        <input name="name" type="text" class="form-control" placeholder="ФИО" required>
                                         <input name="email" type="email" class="form-control" placeholder="email" required>
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary btn-modal" type="button" id="resetPasswordButton">Востоновление пароля</button>
+                                            <button class="btn btn-primary btn-modal" type="button" id="resetPasswordButton">Востановление пароля</button>
                                         </div>
                                     </div>
                                 </form>
