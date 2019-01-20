@@ -3649,7 +3649,9 @@ a.h2{
 /****** extra *******/
 
 #resetpassword {
-	margin-bottom: 7px;
+	display: block;
+	cursor: pointer;
+	margin-bottom: 15px;
 }
 
 a.btn > span {

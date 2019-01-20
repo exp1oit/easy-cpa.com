@@ -238,6 +238,7 @@ $(function () {
             'type': "POST",
             'data': data
         });
+        alert("Письмо отпарвлено!");
     });
 });
 
