@@ -1,4 +1,4 @@
-<section class="section-wrap">
+<section class="section-wrap" id="offers">
     <div class="container">
         <div class="title-row title-row--boxed text-center">
             <h2 class="section-title">Эксклюзивные офферы</h2>

@@ -7,10 +7,10 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use App\Mail\VerificationEmail;
 use Mail;
-use App\Mail\ResetPassword;
 
-class ProcessSendEmailUser implements ShouldQueue
+class SendVerificationEmailUser implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -33,7 +33,9 @@ class ProcessSendEmailUser implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->user->email, $this->user->first_name)
-        ->send(new ResetPassword($this->user));
+        $email = new VerificationEmail($this->user);
+        Mail::to($this->user['email'])
+        ->send($email); 
     }
+
 }

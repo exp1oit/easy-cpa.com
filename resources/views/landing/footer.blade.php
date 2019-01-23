@@ -73,7 +73,7 @@
         <div class="footer__bottom top-divider">
           <div class="container text-center">
             <span class="copyright">
-              © 2019 Margin, Made by <a href="https://deothemes.com/">DeoThemes</a>
+              © 2019 Easy-cpa</a>
             </span>
           </div>
         </div> <!-- end footer bottom -->

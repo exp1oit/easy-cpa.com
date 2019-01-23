@@ -227,6 +227,7 @@ $(function () {
                 'type': "POST",
                 'data': data
             });
+            alert("Вы зарегистрированы");
         }
     });
 

@@ -1,6 +1,8 @@
 @extends('layouts.mail')
 
+
 @section('content')
+
 <table class="wrapper-table" cellpadding="5" cellspacing="0" width="100%" border="0" style="border-collapse:collapse; color:#444; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size:14px; line-height:1.5; background-color:#eee; background-repeat:no-repeat"
     bgcolor="#eeeeee">
     <tbody>
@@ -182,9 +184,9 @@
                                                                                 width="30" height="100%"></td>
                                                                             <td class="content-cell" width="540" style="border-collapse:collapse; border-color:transparent; vertical-align:top"
                                                                                 valign="top">
-                                                                                <h4 style="font-weight:normal; line-height:1.2; margin:0 0 10px; font-size:20px; color:#444; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif"><strong>Востановление пароля</strong></h4>
+                                                                                <h4 style="font-weight:normal; line-height:1.2; margin:0 0 10px; font-size:20px; color:#444; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif"><strong>Регистрация</strong></h4>
                                                                                 <p style="font-size:inherit; line-height:inherit; margin:0 0 10px; color:inherit; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-weight:normal; padding:0">
-                                                                                    Вы запросили востановление пароля. Если это были вы то перейдите по ссылки ниже, если нет, то настояетльно рекомендуем Вам воспользовать данной услугой и поменять пароля на более надёжный. 
+                                                                                    Вы успешно зарегистрировались на данном сервесе. Удачного использования!
                                                                                 </p>
                                                                             </td>
                                                                             <td class="gutter" style="border-collapse:collapse; border-color:transparent; width:30px !important"
@@ -223,35 +225,7 @@
                                                                                         height="40" class="sp-button flat">
                                                                                         <tbody>
                                                                                             <tr style="border-color:transparent">
-                                                                                                <td class="sp-button-side-padding"
-                                                                                                    style="border-collapse:collapse; border-color:transparent; border-style:none; border-width:0; -premailer-width:21; width:21px; border:0; padding:0"
-                                                                                                    width="21">&nbsp;&nbsp;</td>
-                                                                                                <td class="sp-button-text"
-                                                                                                    style="border-collapse:collapse; border-color:transparent; border-style:none; border-width:0; border:0; padding:0; align:center; border-radius:5px; height:40px; text-align:center; vertical-align:middle; width:auto"
-                                                                                                    height="40" align="center"
-                                                                                                    valign="middle"
-                                                                                                    width="auto">
-                                                                                                    <table cellpadding="0"
-                                                                                                        border="0"
-                                                                                                        cellspacing="0"
-                                                                                                        width="100%"
-                                                                                                        style="border-collapse:collapse; color:#444; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size:14px; line-height:1.5; border:0">
-                                                                                                        <tbody>
-                                                                                                            <tr style="border-color:transparent">
-                                                                                                                <td
-                                                                                                                    align="center"
-                                                                                                                    style="border-collapse:collapse; border-color:transparent; line-height:1; border:0; padding:0"><a
-                                                                                                                        target="_blank"
-                                                                                                                        style="text-decoration:none; color:#FFF; display:block; font-family:Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-family-short:arial; font-size:16px; font-weight:bold"
-                                                                                                                        href="{{url(config('app.url').route('password.reset', $token, false))}}"
-                                                                                                                        rel="nofollow">Востановление пароля</a></td>
-                                                                                                            </tr>
-                                                                                                        </tbody>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td class="sp-button-side-padding"
-                                                                                                    style="border-collapse:collapse; border-color:transparent; border-style:none; border-width:0; -premailer-width:21; width:21px; border:0; padding:0"
-                                                                                                    width="21">&nbsp;&nbsp;</td>
+                                                                                                
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>

@@ -6,9 +6,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\ResetPassword;
+use App\Jobs\SendEmailResetPasswordUser;
+use App\Jobs\SendVerificationEmailUser;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable implements MustVerifyEmail
+{ 
     use Notifiable;
 
     /**
@@ -31,7 +33,11 @@ class User extends Authenticatable
 
     public function sendPasswordResetNotification($token)
     {
-        // Your your own implementation.
-        $this->notify(new ResetPassword($token));
+        dispatch(new SendEmailResetPasswordUser($this, $token));
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        dispatch( new SendVerificationEmailUser($this));
     }
 }
