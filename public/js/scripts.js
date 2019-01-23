@@ -225,9 +225,14 @@ $(function () {
             $.ajax({
                 'url': $("#singUpForm").attr('action'),
                 'type': "POST",
-                'data': data
+                'data': data,
+                success: function () {
+                    $('#textSingUp').text("Письмо для подтверждения почты отправлено");
+                },
+                error: function () {
+                    $('#textSingUp').text("Произошла ошибка. Мы пытаемся исправить это!");
+                }
             });
-            alert("Вы зарегистрированы");
         }
     });
 
@@ -237,9 +242,14 @@ $(function () {
         $.ajax({
             'url': $("#resetPasswordForm").attr('action'),
             'type': "POST",
-            'data': data
+            'data': data,
+            success: function () {
+                $('#textResetPassword').text("Письмо для востановления пароля отправлено");
+            },
+            error: function () {
+                $('#textResetPassword').text("Произошла ошибка. Проверьте правильность написания email.");
+            }
         });
-        alert("Письмо отпарвлено!");
     });
 });
 

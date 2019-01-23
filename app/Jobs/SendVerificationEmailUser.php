@@ -34,6 +34,7 @@ class SendVerificationEmailUser implements ShouldQueue
     public function handle()
     {
         $email = new VerificationEmail($this->user);
+        $email->subject("Подтверждение email");
         Mail::to($this->user['email'])
         ->send($email); 
     }

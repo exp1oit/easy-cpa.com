@@ -78,6 +78,7 @@
                                         <input name="email" type="email" class="form-control" placeholder="email" aria-describedby="button-addon2" required>
                                         <input name="password" id="password" type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon2" required>
                                         <input name="password_confirmation" id="password-confirm" type="password" placeholder="Повторите пароль" class="form-control"  aria-describedby="button-addon2" name="password_confirmation" required>
+                                        <p id="textSingUp"></p>
                                         <div class="input-group-append">
                                             <button class="btn btn-primary btn-modal" id="singUp" type="button" id="button-addon2">Зарегистрироваться</button>
                                         </div>
@@ -101,6 +102,7 @@
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
                                         <input name="email" type="email" class="form-control" placeholder="email" required>
+                                        <p id="textResetPassword"></p>
                                         <div class="input-group-append">
                                             <button class="btn btn-primary btn-modal" type="button" id="resetPasswordButton">Востановление пароля</button>
                                         </div>
