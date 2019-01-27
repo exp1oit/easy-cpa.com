@@ -12,3 +12,5 @@
 */
 
 Route::get('/admin', 'AdminController@index');
+
+Route::resource('offers', 'OfferController');
