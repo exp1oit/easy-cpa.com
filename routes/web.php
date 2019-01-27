@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-
-Auth::routes(['verify' => true]);
-
-Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');
+Route::get('/', 'AdminController@index');
