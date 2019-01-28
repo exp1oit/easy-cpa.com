@@ -229,10 +229,18 @@ $(function () {
                 success: function () {
                     $('#textSingUp').text("Письмо для подтверждения почты отправлено");
                 },
-                error: function () {
-                    $('#textSingUp').text("Произошла ошибка. Мы пытаемся исправить это!");
+                error: function (data) {
+                    if ( "email" in  data.responseJSON.errors ) {
+                        $('#textSingUp').text(data.responseJSON.errors.email[0]);
+                    } else if ( "name" in  data.responseJSON.errors ) {
+                        $('#textSingUp').text(data.responseJSON.errors.name[0]);
+                    } else {
+                        $('#textSingUp').text(data.responseJSON.errors.password[0]);
+                    }
                 }
             });
+        } else {
+            $('#textSingUp').text("Пароли не совпадают!");
         }
     });
 
@@ -246,8 +254,10 @@ $(function () {
             success: function () {
                 $('#textResetPassword').text("Письмо для востановления пароля отправлено");
             },
-            error: function () {
-                $('#textResetPassword').text("Произошла ошибка. Проверьте правильность написания email.");
+            error: function (data) {
+                if ( "email" in  data.responseJSON.errors ) {
+                    $('#textResetPassword').text(data.responseJSON.errors.email[0]);
+                }
             }
         });
     });
@@ -262,3 +272,9 @@ $('#icon-dolar').on('click', function () {
     $('#rubTable').hide();
     $('#dolarTable').show();
 })
+
+$(function(){
+    if (errorLogin == true) {
+        $('#loginModal').modal('show');
+    }
+});
