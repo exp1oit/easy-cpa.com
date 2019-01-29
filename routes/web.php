@@ -17,4 +17,4 @@ Route::get('/offers', 'AdminController@offers');
 
 Route::get('/offer/{id}', 'AdminController@offer');
 
-Route::get('/formLead', 'AdminController@formLead');
+Route::get('/lead/form', 'AdminController@formLead');
