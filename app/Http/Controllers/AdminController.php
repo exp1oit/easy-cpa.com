@@ -10,4 +10,18 @@ class AdminController extends Controller
     {
         return view('UserPanelPage.dashbord');
     }
+
+    public function offers()
+    {
+        return view('UserPanelPage.offers');
+    }
+
+    public function offer($id)
+    {
+        return view('UserPanelPage.offer');
+    }
+
+    public function formLead(){
+        return view('UserPanelPage.formLead');
+    }
 }
