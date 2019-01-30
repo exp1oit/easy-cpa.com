@@ -17,3 +17,9 @@ Auth::routes(['verify' => true]);
 Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');
 
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/offers', 'AdminController@offers');
+
+Route::get('/offer/{id}', 'AdminController@offer');
+
+Route::get('/lead/form', 'AdminController@formLead');
