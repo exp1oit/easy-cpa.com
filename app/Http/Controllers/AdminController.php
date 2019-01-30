@@ -24,4 +24,8 @@ class AdminController extends Controller
     public function formLead(){
         return view('UserPanelPage.formLead');
     }
+
+    public function profile(){
+        return view('UserPanelPage.userProfile');
+    }
 }
