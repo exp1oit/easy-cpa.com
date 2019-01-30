@@ -53,6 +53,13 @@
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" 'checked'>
                                         <br>
                                         <a class="h2" id="resetpassword">Востановление пароля</a>
+                                        <p>
+                                            @if ($errors->has('password') || $errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>Вы ошиблись либо в пароле либо в email.</strong>
+                                                </span>
+                                            @endif
+                                        </p>
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="submit" id="button-addon1">Войти</button>
                                         </div>
@@ -143,3 +150,7 @@
         </lineargradient>
     </defs>
 </svg>
+
+<script>
+    var errorLogin = {{ $errors->has('password') || $errors->has('email') }};
+</script>
