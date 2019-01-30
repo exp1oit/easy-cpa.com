@@ -152,5 +152,9 @@
 </svg>
 
 <script>
-    var errorLogin = {{ $errors->has('password') || $errors->has('email') }};
+    @if($errors->has('password') || $errors->has('email'))
+        var errorLogin = {{ $errors->has('password') || $errors->has('email') }};
+    @else
+        var errorLogin = '';
+    @endif
 </script>
