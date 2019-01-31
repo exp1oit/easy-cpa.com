@@ -24,4 +24,8 @@ Route::get('/offer/{id}', 'AdminController@offer');
 
 Route::get('/lead/form', 'AdminController@formLead');
 
-Route::get('/user/profile', 'AdminController@profile');
+Route::get('/user/{id}/profile', 'UserController@profile')->name('profile');
+
+Route::put('/user/{id}/profile', 'UserController@updateProfile');
+
+Route::resource('user', 'UserController');

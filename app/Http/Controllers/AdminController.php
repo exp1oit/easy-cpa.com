@@ -6,6 +6,18 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    protected $user;
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+           
+    }
+
     public function index()
     {
         return view('UserPanelPage.dashbord');
@@ -23,9 +35,5 @@ class AdminController extends Controller
 
     public function formLead(){
         return view('UserPanelPage.formLead');
-    }
-
-    public function profile(){
-        return view('UserPanelPage.userProfile');
     }
 }

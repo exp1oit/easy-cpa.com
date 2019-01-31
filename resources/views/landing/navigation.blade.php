@@ -81,7 +81,8 @@
                                 <form method="POST" id="singUpForm" action="{{ route('register') }}">
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
-                                        <input name="name" type="text" class="form-control" placeholder="ФИО" aria-describedby="button-addon2" required>
+                                        <input name="first_name" type="text" class="form-control" placeholder="Имя" aria-describedby="button-addon2" required>
+                                        <input name="last_name" type="text" class="form-control" placeholder="Фамилия" aria-describedby="button-addon2" required>
                                         <input name="email" type="email" class="form-control" placeholder="email" aria-describedby="button-addon2" required>
                                         <input name="password" id="password" type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon2" required>
                                         <input name="password_confirmation" id="password-confirm" type="password" placeholder="Повторите пароль" class="form-control"  aria-describedby="button-addon2" name="password_confirmation" required>
