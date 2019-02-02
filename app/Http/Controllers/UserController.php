@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use App\User;
 
 class UserController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +26,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
+        $users = User::all();
 
-        return view()->with($user);
+        return view('AdminPanelPage.user')->with('users', $users);
     }
 
     /**
@@ -26,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view();
+        return view('AdminPanelPage.userCreateForm');
     }
 
     /**
@@ -37,9 +49,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all);
+        $user = $request->all();
 
-        return redirect();
+        $user['password'] =  Hash::make($user['password']);
+        $user = User::create($user);
+        
+        if ($user->markEmailAsVerified()) {
+            event(new Verified($user));
+        }
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -52,7 +71,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view()->with($user);
+        return view()->with('user', $user);
     }
 
     /**
@@ -65,7 +84,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         
-        return view('UserPanelPage.userProfile')->with($user);
+        return view('AdminPanelPage.userUpdateForm')->with('user', $user);
     }
 
     /**
@@ -80,7 +99,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update($request->all());
         
-        return;
+        return redirect()->route('user.index');
     }
 
     /**
@@ -94,11 +113,11 @@ class UserController extends Controller
         $user = User::find($id);
         
         if ($user) {
-            return response()->json();
+            $user->delete();
+            return redirect()->route('user.index');
         }
-        $user->delete();
-
-        return response()->json();
+        
+        return redirect()->route('user.index');
     }
 
 
@@ -106,7 +125,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('UserPanelPage.userProfile')->with($user);
+        return view('UserPanelPage.userProfile')->with('user', $user);
     }
 
     public function updateProfile(Request $request, $id)

@@ -29,3 +29,7 @@ Route::get('/user/{id}/profile', 'UserController@profile')->name('profile');
 Route::put('/user/{id}/profile', 'UserController@updateProfile');
 
 Route::resource('user', 'UserController');
+
+Route::resource('lead', 'LeadController');
+
+Route::resource('offer', 'OfferController');

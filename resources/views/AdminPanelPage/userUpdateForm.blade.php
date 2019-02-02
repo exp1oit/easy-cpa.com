@@ -18,8 +18,10 @@
                                             <h3>Основная информация о пользователе</h3>
                                         </div>
                                         <div class="card-block">
-                                            <form id="main" method="post" action="" novalidate="">
+                                            <form id="main" method="post" action="/user/{{$user->id}}" novalidate="">
+                                                @method('PUT')
                                                 @csrf
+                                                <input type="hidden" name="id" value="{{$user->id}}" hidden>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Имя</label>
                                                     <div class="col-sm-10">
@@ -52,20 +54,26 @@
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
-                                                {{--  <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Тип пользователя</label>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Текущий баланс</label>
                                                     <div class="col-sm-10">
-                                                        <select name="select" class="form-control fill">
-                                                            <option value="opt1">Type 1</option>
-                                                            <option value="opt2">Type 2</option>
-                                                            <option value="opt3">Type 3</option>
-                                                        </select>
+                                                        <input type="phone" class="form-control" id="phone"
+                                                            name="phone" value="{{ $user->current_balance }}">
+                                                        <span class="messages"></span>
                                                     </div>
-                                                </div>  --}}
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Доступные средства</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="phone" class="form-control" id="phone"
+                                                            name="phone" value="{{ $user->available_balance }}">
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2"></label>
                                                     <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary m-b-0">Сохранить</button>
+                                                        <button type="submit" class="btn btn-primary m-b-0">Обновить</button>
                                                     </div>
                                                 </div>
                                             </form>

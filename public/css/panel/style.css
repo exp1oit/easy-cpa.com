@@ -95,6 +95,10 @@ code {
     padding-right: 20px
 }
 
+.right {
+    float: right; 
+}
+
 @media only screen and (max-width:575px) {
     h1 {
         font-size: 2rem
@@ -12814,4 +12818,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
 .text-offer-p {
     width: 70%;
     font-size: 14px;
+}
+
+.form-table {
+    display: inline-block;
 }
