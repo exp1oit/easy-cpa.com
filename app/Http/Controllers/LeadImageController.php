@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Lead;
+use App\LeadImage;
 use Illuminate\Http\Request;
 
-class LeadController extends Controller
+class LeadImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class LeadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lead  $lead
+     * @param  \App\LeadImage  $leadImage
      * @return \Illuminate\Http\Response
      */
-    public function show(Lead $lead)
+    public function show(LeadImage $leadImage)
     {
         //
     }
@@ -52,10 +52,10 @@ class LeadController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lead  $lead
+     * @param  \App\LeadImage  $leadImage
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lead $lead)
+    public function edit(LeadImage $leadImage)
     {
         //
     }
@@ -64,10 +64,10 @@ class LeadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lead  $lead
+     * @param  \App\LeadImage  $leadImage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lead $lead)
+    public function update(Request $request, LeadImage $leadImage)
     {
         //
     }
@@ -75,10 +75,10 @@ class LeadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lead  $lead
+     * @param  \App\LeadImage  $leadImage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lead $lead)
+    public function destroy(LeadImage $leadImage)
     {
         //
     }

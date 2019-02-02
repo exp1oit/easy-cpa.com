@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Offer;
+use Illuminate\Http\Request;
 
 class OfferController extends Controller
 {
@@ -14,9 +14,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
-
-        return view('')->with('offers', $offers);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        return view('AdminPanelPage.leadCreateForm');
+        //
     }
 
     /**
@@ -37,67 +35,51 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        Offer::create($request->all());
-
-        return redirect()->route('lead.index'); 
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Offer $offer)
     {
-        $offer = Offer::find($id);
-
-        return view('AdminPanelPage.offerShow')->with('offer', $offer);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Offer $offer)
     {
-        $offer = Offer::find($id);
-
-        return view('AdminPanelPage.offerUpdateForm')->with('lead', $offer);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Offer $offer)
     {
-        $offer = Offer::find($id);
-        $offer->update($request->all());
-        
-        return redirect()->route('offer.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Offer $offer)
     {
-        $offer = Offer::find($id);
-        
-        if ($offer) {
-            $offer->delete();
-            return redirect()->route('offer.index');
-        }
-        
-        return redirect()->route('offer.index');
+        //
     }
 }
