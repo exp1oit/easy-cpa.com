@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\OfferImage;
+use App\Models\OfferImage;
 use Illuminate\Http\Request;
 
 class OfferImageController extends Controller

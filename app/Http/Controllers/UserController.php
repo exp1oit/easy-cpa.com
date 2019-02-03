@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 
 class UserController extends Controller
 {

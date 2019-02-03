@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LeadImage;
+use App\Models\LeadImage;
 use Illuminate\Http\Request;
 
 class LeadImageController extends Controller
