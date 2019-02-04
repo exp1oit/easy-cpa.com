@@ -33,16 +33,17 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @for ($i = 0; $i < 5; $i++)
+                                                        @foreach ($offers as $offer)
                                                             <tr>
                                                                 <td>
                                                                     <div class="d-inline-block align-middle">
                                                                         <img src="{{ asset('/img/timehard.jpg') }}" alt="user image"
                                                                             class="img-radius img-80 align-top m-r-30">
                                                                         <div class="d-inline-block">
-                                                                            <h6>Shirley Hoe</h6>
-                                                                            <p class="text-muted m-b-0">Sales executive ,
-                                                                                NY</p>
+                                                                            <a href="offer/{{$offer->id}}"> <h6>{{$offer->title}}</h6>
+                                                                                <p class="text-muted m-b-0">Sales executive ,
+                                                                                    NY</p>
+                                                                            </a>
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -60,10 +61,14 @@
                                                                     </ul>
                                                                 </td>
                                                                 <td>
-                                                                    <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button>
+                                                                    <form class="form-table" method='POST'  action="/offer/{{$offer->id}}">
+                                                                        @method('DELETE')
+                                                                        @csrf
+                                                                        <button type='submit' class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-close"></i></button>
+                                                                    </form>
                                                                 </td>
                                                             </tr>
-                                                        @endfor
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

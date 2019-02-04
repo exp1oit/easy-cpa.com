@@ -21,7 +21,7 @@
                                                 <h3 class>Пользователи</h3>
                                             </div>
                                             <div class="col-md-3">
-                                                <a href="/user/create" class='right'><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button></a>
+                                                <a href="/offer/create" class='right'><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button></a>
                                             </div>
                                             </div>
                                         </div>
@@ -31,36 +31,34 @@
                                                     <thead>
                                                         <tr>
                                                             <th>id</th>
-                                                            <th>Имя</th>
-                                                            <th>Фамилия</th>
-                                                            <th>Email</th>
-                                                            <th>Телефон</th>
+                                                            <th>Название</th>
+                                                            <th>id Пользователя опубликовавшего это</th>
+                                                            <th>Рейтинг</th>
+                                                            <th>Описание</th>
                                                             <th>Текущий баланс</th>
-                                                            <th>Доступный баланс</th>
-                                                            <th>Подтверждие почты</th>
+                                                            <th>Статус</th>
                                                             <th>Дата создания</th>
                                                             <th>Дата последнего обновления</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach  ($users as $user)
+                                                        @foreach  ($offers as $offer)
                                                             <tr>
-                                                                <td>{{ $user->id }}</td>
-                                                                <td>{{ $user->first_name }}</td>
-                                                                <td>{{ $user->last_name }}</td>
-                                                                <td>{{ $user->email}}</td>
-                                                                <td>{{ $user->phone ? $user->phone  : 'Не указан' }}</td>
-                                                                <td>{{ $user->current_balance }}</td>
-                                                                <td>{{ $user->available_balance }}</td>
-                                                                <td>{{ $user->email_verified_at ? 'есть' : 'нету' }}</td>
-                                                                <td>{{ $user->created_at }}</td>
-                                                                <td>{{ $user->updated_at }}</td>
+                                                                <td>{{ $offer->id }}</td>
+                                                                <td>{{ $offer->title }}</td>
+                                                                <td>{{ $offer->user_id }}</td>
+                                                                <td>{{ $offer->rating }}</td>
+                                                                <td>{{ $offer->description }}</td>
+                                                                <td>{{ $offer->promo }}</td>
+                                                                <td>{{ $offer->condition }}</td>
+                                                                <td>{{ $offer->created_at }}</td>
+                                                                <td>{{ $offer->updated_at }}</td>
                                                                 <td>
-                                                                    <a href="/user/{{$user->id}}/edit">
+                                                                    <a href="/offer/{{$offer->id}}/edit">
                                                                         <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
                                                                     </a>
-                                                                    <form class="form-table" method='POST'  action="/user/{{$user->id}}">
+                                                                    <form class="form-table" method='POST'  action="/offer/{{$offer->id}}">
                                                                         @method('DELETE')
                                                                         @csrf
                                                                         <button type='submit' class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-close"></i></button>

@@ -40,4 +40,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         dispatch( new SendVerificationEmailUser($this));
     }
+
+    public function offers()
+    {
+        return $this->hasMany('App\Models\Offer');
+    }
+
+    public function leads()
+    {
+        return $this->hasMany('App\Models\Lead');
+    }
 }

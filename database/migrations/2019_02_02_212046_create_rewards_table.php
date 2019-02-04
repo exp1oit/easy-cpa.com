@@ -21,7 +21,7 @@ class CreateRewardsTable extends Migration
         });
         
         Schema::table('rewards', function (Blueprint $table) {
-            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
         });
     }
 

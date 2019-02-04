@@ -14,7 +14,9 @@ class LeadController extends Controller
      */
     public function index()
     {
-        //
+        $laeds = Lead::all();
+
+        return view('')->with('leads', $leads);
     }
 
     /**
@@ -24,7 +26,7 @@ class LeadController extends Controller
      */
     public function create()
     {
-        //
+        return view('UserPanelPage.leadCreateForm');
     }
 
     /**
@@ -35,7 +37,9 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Lead::create($request->all());
+
+        return redirect()->route('lead.index');
     }
 
     /**
@@ -46,7 +50,7 @@ class LeadController extends Controller
      */
     public function show(Lead $lead)
     {
-        //
+        return view()->with('lead', $lead);
     }
 
     /**
@@ -57,7 +61,7 @@ class LeadController extends Controller
      */
     public function edit(Lead $lead)
     {
-        //
+        return view()->with('lead', $lead);
     }
 
     /**
@@ -69,7 +73,9 @@ class LeadController extends Controller
      */
     public function update(Request $request, Lead $lead)
     {
-        //
+        $lead->update($request->all());
+
+        return redirect()->route('lead.index');
     }
 
     /**
@@ -80,6 +86,8 @@ class LeadController extends Controller
      */
     public function destroy(Lead $lead)
     {
-        //
+        $lead->delete();
+
+        return redirect()->route('lead.index');
     }
 }

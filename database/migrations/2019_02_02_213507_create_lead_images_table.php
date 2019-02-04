@@ -22,8 +22,8 @@ class CreateLeadImagesTable extends Migration
         });
 
         Schema::table('lead_images', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
         });
     }
 

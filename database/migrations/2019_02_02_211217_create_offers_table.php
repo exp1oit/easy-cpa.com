@@ -15,8 +15,8 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
             $table->integer('user_id')->unsigned()->nullable();
+            $table->string('title');
             //$table->integer('category_id')->nullable()->unsigned();
             //$table->integer('subcategory_is')->nullable()->unsigned();
             //$table->integer('status_id')->nullable()->unsigned();
@@ -28,7 +28,7 @@ class CreateOffersTable extends Migration
         });
 
         Schema::table('offers', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             //$table->foreign('category_id')->references('id')->on('categories');
             //$table->foreign('subcategory_is')->references('id')->on('subcategories');
             //$table->foreign('status_id')->references('id')->on('statuses');

@@ -46,23 +46,8 @@
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
                                         data-dropdown-out="fadeOut">
                                         <li>
-                                            <a href="https://colorlib.com//polygon/admindek/default/index.html#!">
-                                                <i class="feather icon-settings"></i> Settings
-                                            </a>
-                                        </li>
-                                        <li>
                                             <a href="https://colorlib.com//polygon/admindek/default/index.html#">
                                                 <i class="feather icon-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://colorlib.com//polygon/admindek/default/email-inbox.html">
-                                                <i class="feather icon-mail"></i> My Messages
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://colorlib.com//polygon/admindek/default/auth-lock-screen.html">
-                                                <i class="feather icon-lock"></i> Lock Screen
                                             </a>
                                         </li>
                                         <li>

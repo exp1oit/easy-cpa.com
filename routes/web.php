@@ -18,9 +18,9 @@ Route::get('/users', "OffestsController@index")->name('users')->middleware('veri
 
 Route::get('/admin', 'AdminController@index');
 
-Route::get('/offers', 'AdminController@offers');
+Route::get('user/offers', 'AdminController@offers');
 
-Route::get('/offer/{id}', 'AdminController@offer');
+Route::get('user/offer/{id}', 'AdminController@offer');
 
 Route::get('/lead/form', 'AdminController@formLead');
 
@@ -28,8 +28,14 @@ Route::get('/user/{id}/profile', 'UserController@profile')->name('profile');
 
 Route::put('/user/{id}/profile', 'UserController@updateProfile');
 
-Route::resource('user', 'UserController');
+Route::resource('admin/user', 'UserController');
 
 Route::resource('lead', 'LeadController');
 
 Route::resource('offer', 'OfferController');
+
+// Route::get('/user/offers', 'OfferController@userOfffers');
+
+// Route::get('/user/offer/create', 'OfferConroller@create')
+
+// Route::resource('user/offer', 'OfferConroller');
