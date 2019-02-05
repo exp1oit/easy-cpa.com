@@ -3,7 +3,7 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo" logo-theme="theme6">
                         <a>
-                            <img class="img-fluid" src="{{ asset('testimg/logo.png') }}" alt="Theme-Logo">
+                            <img class="img-fluid" src="{{ asset('testing/logo.png') }}" alt="Theme-Logo">
                         </a>
                         <a class="mobile-menu" id="mobile-collapse">
                             <i class="feather icon-menu icon-toggle-right"></i>
