@@ -20,25 +20,30 @@
                                         <img src="{{ asset('testing/user-test.png') }}" class="img-radius"
                                             alt="User-Profile-Image">
                                         <span>John Doe</span>
-                                        <i class="feather icon-chevron-down"></i>
+
+                                        @if (Auth::check())
+                                            <i class="feather icon-chevron-down"></i>
+                                        @endif
                                     </div>
-                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
-                                        data-dropdown-out="fadeOut">
-                                        <li>
-                                            <a href="/user/{{ auth::id() }}/profile">
-                                                <i class="feather icon-user"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a  href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">>
-                                                <i class="feather icon-log-out"></i> Logout
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
+                                    @if (Auth::check())
+                                        <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
+                                            data-dropdown-out="fadeOut">
+                                            <li>
+                                                <a href="/user/{{ auth::id() }}/profile">
+                                                    <i class="feather icon-user"></i> Profile
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">>
+                                                    <i class="feather icon-log-out"></i> Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    @endif
                                 </div>
                             </li>
                         </ul>

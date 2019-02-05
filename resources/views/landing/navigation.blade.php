@@ -48,8 +48,8 @@
                                 <form method="POST" action="{{ route('login') }}">
                                   @csrf
                                     <div class="input-group mb-3 w-75 mx-auto">
-                                        <input type="email" class="form-control" placeholder="Email" aria-describedby="button-addon1" required>
-                                        <input type="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon1" required>
+                                        <input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="button-addon1" required>
+                                        <input type="password" name="password" class="form-control" placeholder="Пароль"  aria-describedby="button-addon1" required>
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" 'checked'>
                                         <br>
                                         <a class="h2" id="resetpassword">Востановление пароля</a>
