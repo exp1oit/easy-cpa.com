@@ -12,7 +12,7 @@ class Offer extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'rating', 'description', 'promo', 'condition'
+        'user_id', 'title', 'rating', 'description', 'promo', 'condition'
     ];
 
     /**
@@ -21,7 +21,7 @@ class Offer extends Model
      * @var array
      */
     protected $hidden = [
-        'user_id'
+        
     ];
 
     public function user()

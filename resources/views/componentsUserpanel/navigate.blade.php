@@ -19,7 +19,7 @@
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="{{ asset('testing/user-test.png') }}" class="img-radius"
                                             alt="User-Profile-Image">
-                                        <span>John Doe</span>
+                                        <span>{{ Auth::check() ? Auth::user()->first_name . ' ' . Auth::user()->last_name : 'John Doe' }}</span>
 
                                         @if (Auth::check())
                                             <i class="feather icon-chevron-down"></i>

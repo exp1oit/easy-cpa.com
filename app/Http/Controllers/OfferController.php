@@ -50,9 +50,9 @@ class OfferController extends Controller
         if ($request->hasfile('filename')) {
             foreach ($request->file('filename') as $file) {
                 $name_file = $file->getClientOriginalName();
-                $path = public_path() . '/files/' . $offer->id . '/';
+                $path = '/files/' . $offer->id . '/';
 
-                $file->move($path, $name_file);  
+                $file->move(public_path() . $path, $name_file);  
 
                 $path .= "$name_file";
 
