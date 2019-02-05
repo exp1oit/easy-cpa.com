@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-9 offset-lg-1">
                 <div class="hero__text-holder">
-                    <h1 class="hero__title hero__title--boxed">CPA сеть для микробезнеса в России  </h1>
+                    <h1 class="hero__title hero__title--boxed">CPA сеть для микробизнеса в России  </h1>
                 </div>
             </div>
         </div>
