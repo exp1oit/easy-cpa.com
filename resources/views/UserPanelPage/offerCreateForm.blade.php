@@ -20,7 +20,7 @@
                                         <div class="card-block">
                                             <form id="main" method="post" action="{{ route('offer.store') }}" novalidate="" enctype="multipart/form-data">
                                                 @csrf
-                                                <input type="hidden" name="user_id" value="{{ Auth::id() ? Auth::id() : 1 }}" hidden>
+                                                <input type="hidden" name="user_id" value="{{ Auth::id() ? Auth::id() : null }}" hidden>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Название оффера</label>
                                                     <div class="col-sm-10">

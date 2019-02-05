@@ -18,10 +18,10 @@
                                         <div class="card-header">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                <h3 class>Пользователи</h3>
+                                                <h3 class>Лиды</h3>
                                             </div>
                                             <div class="col-md-3">
-                                                <a href="{{ route('user.create') }}" class='right'><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button></a>
+                                                <a href="/lead/create" class='right'><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button></a>
                                             </div>
                                             </div>
                                         </div>
@@ -31,36 +31,35 @@
                                                     <thead>
                                                         <tr>
                                                             <th>id</th>
+                                                            <th>id Пользователя</th>
+                                                            <th>id Оффера</th>
                                                             <th>Имя</th>
-                                                            <th>Фамилия</th>
                                                             <th>Email</th>
-                                                            <th>Телефон</th>
-                                                            <th>Текущий баланс</th>
-                                                            <th>Доступный баланс</th>
-                                                            <th>Подтверждие почты</th>
+                                                            <th>Комментарий</th>
+                                                            <th>Выплата</th>
                                                             <th>Дата создания</th>
                                                             <th>Дата последнего обновления</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach  ($users as $user)
+                                                        @foreach  ($leads as $lead)
                                                             <tr>
-                                                                <td>{{ $user->id }}</td>
-                                                                <td>{{ $user->first_name }}</td>
-                                                                <td>{{ $user->last_name }}</td>
-                                                                <td>{{ $user->email}}</td>
-                                                                <td>{{ $user->phone ? $user->phone  : 'Не указан' }}</td>
-                                                                <td>{{ $user->current_balance }}</td>
-                                                                <td>{{ $user->available_balance }}</td>
-                                                                <td>{{ $user->email_verified_at ? 'есть' : 'нету' }}</td>
-                                                                <td>{{ $user->created_at }}</td>
-                                                                <td>{{ $user->updated_at }}</td>
+                                                                <td>{{ $lead->id }}</td>
+                                                                <td>{{ $lead->user_id }}</td>
+                                                                <td>{{ $lead->offer_id }}</td>
+                                                                <td>{{ $lead->name}}</td>
+                                                                <td>{{ $lead->phone ? $lead->phone  : 'Не указан' }}</td>
+                                                                <td>{{ $lead->email }}</td>
+                                                                <td>{{ $lead->comment }}</td>
+                                                                <td>{{ $lead->reward }}</td>
+                                                                <td>{{ $lead->created_at }}</td>
+                                                                <td>{{ $lead->updated_at }}</td>
                                                                 <td>
-                                                                    <a href="/admin/user/{{$user->id}}/edit">
+                                                                    <a href="/lead/{{$lead->id}}/edit">
                                                                         <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
                                                                     </a>
-                                                                    <form class="form-table" method='POST'  action="admin/user/{{$user->id}}">
+                                                                    <form class="form-table" method='POST'  action="/lead/{{$lead->id}}">
                                                                         @method('DELETE')
                                                                         @csrf
                                                                         <button type='submit' class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-close"></i></button>

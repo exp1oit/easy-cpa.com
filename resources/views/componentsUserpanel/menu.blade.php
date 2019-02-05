@@ -3,7 +3,7 @@
     <div class="nav-list">
         <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: 100%; height: 100%;">
             <div class="pcoded-inner-navbar main-menu" style="overflow: hidden; width: 100%; height: 100%;">
-                <div class="pcoded-navigation-label" menu-title-theme="theme1">Navigation</div>
+                <div class="pcoded-navigation-label" menu-title-theme="theme1">Меню</div>
                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
                     <li class=" ">
                         <a href="{{ route('offer.index') }}" class="waves-effect waves-dark">
@@ -21,6 +21,24 @@
                             <span class="pcoded-mtext">Создать оффер</span>
                         </a>
                     </li>
+                    @if (Auth::check())
+                        <li class=" ">
+                            <a href="/user/my-offers" class="waves-effect waves-dark">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-feather"></i>
+                                </span>
+                                <span class="pcoded-mtext">Мои офферы</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="/user/my-leads" class="waves-effect waves-dark">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-feather"></i>
+                                </span>
+                                <span class="pcoded-mtext">Мои лиды</span>
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </div>
             <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 156.387px;"></div>

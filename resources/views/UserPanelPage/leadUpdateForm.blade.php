@@ -9,71 +9,60 @@
             <div class="pcoded-inner-content">
                 <div class="main-body">
                     <div class="page-wrapper">
-                        <h1 class="text-center">Обновление пользователя</h1>
+                        <h1 class="text-center">Редактирования лида</h1>
                         <div class="page-body">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3>Основная информация о пользователе</h3>
+                                            <h3>Форма лида</h3>
                                         </div>
                                         <div class="card-block">
-                                            <form id="main" method="post" action="/admin/user/{{ $user->id }}" novalidate="">
+                                            <form id="main" method="post" action="/lead/{{ $lead->id }}" novalidate="">
                                                 @method('PUT')
                                                 @csrf
-                                                <input type="hidden" name="id" value="{{$user->id}}" hidden>
+                                                <input type="hidden" name="user_id" value="{{ $lead->user_id }}" hidden>
+                                                <input type="hidden" name="offer_id" value="{{ $lead->offer_id }}" hidden>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Имя</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="name" name="first_name"
-                                                            value="{{$user->first_name}}">
+                                                        <input type="text" class="form-control" id="name" name="name" value="{{ $lead->name }}">
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Фамилия</label>
+                                                    <label class="col-sm-2 col-form-label">Телефон</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="name" name="last_name"
-                                                            value="{{ $user->last_name }}">
+                                                        <input type="text" class="form-control" id="phone" name="phone" value="{{ $lead->phone }}">
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Цена</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="number" class="form-control" id="reward" name="reward" value="{{ $lead->reward }}">
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">email</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="name" name="email"
-                                                            value="{{ $user->email }}">
+                                                        <input type="email" class="form-control" id="email" name="email"  value="{{ $lead->email }}">
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Номер телефона</label>
+                                                    <label class="col-sm-2 col-form-label">Комменатрий</label>
                                                     <div class="col-sm-10">
-                                                        <input type="phone" class="form-control" id="phone"
-                                                            name="phone" value="{{ $user->phone }}">
-                                                        <span class="messages"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Текущий баланс</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="number" class="form-control" id="current_balance"
-                                                            name="current_balance" value="{{ $user->current_balance }}">
-                                                        <span class="messages"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Доступные средства</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="number" class="form-control" id="available_balance"
-                                                            name="available_balance" value="{{ $user->available_balance }}">
+                                                        <textarea rows="5" cols="5" class="form-control" placeholder="Введете информацию по лиду"
+                                                         name="comment">{{ $lead->comment }}</textarea>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2"></label>
                                                     <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary m-b-0">Обновить</button>
+                                                        <button type="submit" class="btn btn-primary m-b-0">Обновить лид</button>
                                                     </div>
                                                 </div>
                                             </form>

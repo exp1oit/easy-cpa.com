@@ -12,7 +12,7 @@ class Lead extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'phone', 'email', 'comment', 'reward'
+        'user_id', 'offer_id' ,'name', 'phone', 'email', 'comment', 'reward'
     ];
 
     /**
@@ -21,7 +21,7 @@ class Lead extends Model
      * @var array
      */
     protected $hidden = [
-        'user_id'
+        
     ];
 
     public function user()

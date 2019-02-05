@@ -14,9 +14,9 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $laeds = Lead::all();
+        $leads = Lead::all();
 
-        return view('')->with('leads', $leads);
+        return view('AdminPanelPage.leads')->with('leads', $leads);
     }
 
     /**
@@ -24,9 +24,9 @@ class LeadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($offer_id)
     {
-        return view('UserPanelPage.leadCreateForm');
+        return view('UserPanelPage.leadCreateForm')->with('offer_id', $offer_id);
     }
 
     /**
@@ -39,7 +39,7 @@ class LeadController extends Controller
     {
         Lead::create($request->all());
 
-        return redirect()->route('lead.index');
+        return redirect()->route('offer.index');
     }
 
     /**
@@ -50,7 +50,7 @@ class LeadController extends Controller
      */
     public function show(Lead $lead)
     {
-        return view()->with('lead', $lead);
+        return view('UserPanelPage.lead')->with('lead', $lead);
     }
 
     /**
@@ -61,7 +61,7 @@ class LeadController extends Controller
      */
     public function edit(Lead $lead)
     {
-        return view()->with('lead', $lead);
+        return view('UserPanelPage.leadUpdateForm')->with('lead', $lead);
     }
 
     /**
@@ -75,7 +75,7 @@ class LeadController extends Controller
     {
         $lead->update($request->all());
 
-        return redirect()->route('lead.index');
+        return redirect()->route('user-leads');
     }
 
     /**

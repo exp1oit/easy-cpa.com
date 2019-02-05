@@ -16,7 +16,7 @@
                                 <div class="col-md-12">
                                     <div class="card table-card">
                                         <div class="card-header">
-                                            <h3>Офферы</h3>
+                                            <h3>Мои офферы</h3>
                                         </div>
                                         <div class="card-block">
                                             <div class="table-responsive">
@@ -62,9 +62,14 @@
                                                                     </ul>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="/offer/{{$offer->id}}/lead">
+                                                                    <a href="/offer/{{$offer->id}}/edit">
                                                                         <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
                                                                     </a>
+                                                                    <form class="form-table" method='POST'  action="/offer/{{$offer->id}}">
+                                                                        @method('DELETE')
+                                                                        @csrf
+                                                                        <button type='submit' class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-close"></i></button>
+                                                                    </form>
                                                                 </td>
                                                             </tr>
                                                         @endforeach

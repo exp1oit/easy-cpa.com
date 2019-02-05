@@ -65,6 +65,14 @@
                                                                     </tbody>
                                                                 </table>
                                                             </div>  --}}
+
+                                                            <div class='center'>
+                                                                <a href="/offer/{{$offer->id}}/lead">
+                                                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="primary-popover-content">
+                                                                        Довить лид к данному офферу
+                                                                    </button>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <img class="offer-img" src="{{ asset('/img/timehard.jpg') }}" alt="">

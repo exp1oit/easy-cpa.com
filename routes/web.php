@@ -14,7 +14,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');
+// Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');
 
 Route::get('/admin', 'AdminController@index');
 
@@ -23,6 +23,11 @@ Route::get('user/offers', 'AdminController@offers');
 Route::get('user/offer/{id}', 'AdminController@offer');
 
 Route::get('/lead/form', 'AdminController@formLead');
+
+
+Route::get('user/my-offers', 'UserController@myoffer')->name('user-offers');
+
+Route::get('user/my-leads', 'UserController@myleads')->name('user-leads');
 
 Route::get('/user/{id}/profile', 'UserController@profile')->name('profile');
 
@@ -34,8 +39,4 @@ Route::resource('lead', 'LeadController');
 
 Route::resource('offer', 'OfferController');
 
-// Route::get('/user/offers', 'OfferController@userOfffers');
-
-// Route::get('/user/offer/create', 'OfferConroller@create')
-
-// Route::resource('user/offer', 'OfferConroller');
+Route::get('/offer/{offer_id}/lead', 'LeadController@create');

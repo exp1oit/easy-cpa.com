@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use App\Models\User;
 class UserController extends Controller
 {
 
+    protected $user;
     /**
      * Create a new controller instance.
      *
@@ -18,6 +20,7 @@ class UserController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
+        // $this->user = Auth::user();
     }
     /**
      * Display a listing of the resource.
@@ -134,5 +137,19 @@ class UserController extends Controller
         $user->update($request->all());
         
         return redirect()->route('profile', ['id' => $id]);
+    }
+
+    public function myleads()
+    {
+        $laeds = Auth::user()->leads()->get();
+
+        return view('UserPanelPage.userLead')->with('leads', $laeds);
+    }
+
+    public function myOffer()
+    {
+        $offer = Auth::user()->offers()->get();
+
+        return view('UserPanelPage.userOffers')->with('offers', $offer);
     }
 }
