@@ -29,8 +29,9 @@
                                                             <th>CR</th>
                                                             <th>EPC</th>
                                                             <th>География</th>
-                                                            <th></th>
-                                                            <th></th>
+                                                            @if(Auth::check())
+                                                                <th></th>
+                                                            @endif
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -61,11 +62,13 @@
                                                                         <li>3</li>
                                                                     </ul>
                                                                 </td>
-                                                                <td>
-                                                                    <a href="/offer/{{$offer->id}}/lead">
-                                                                        <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
-                                                                    </a>
-                                                                </td>
+                                                                @if(Auth::check())
+                                                                    <td>
+                                                                        <a href="/offer/{{$offer->id}}/lead">
+                                                                            <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
+                                                                        </a>
+                                                                    </td>
+                                                                @endif
                                                             </tr>
                                                         @endforeach
                                                     </tbody>

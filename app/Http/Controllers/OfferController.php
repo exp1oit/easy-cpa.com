@@ -75,10 +75,6 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        $offer->img = $offer->images()->get()->toArray();
-
-        $offer->amount = $offer->rewards()->get()->toArray();
-
         return view('UserPanelPage.offer')->with('offer', $offer);
     }
 

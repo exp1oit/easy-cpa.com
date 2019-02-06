@@ -8482,7 +8482,6 @@ body.horizontal-icon-fixed .pcoded[pcoded-device-type=desktop] .pcoded-navbar .p
 
 .btn {
     border-radius: 2px;
-    text-transform: capitalize;
     font-size: 15px;
     padding: 10px 19px;
     cursor: pointer
@@ -12812,7 +12811,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
 
 .offer-img {
     float: right;
-    width: 400px;
+    width: 300px;
 }
 
 .text-offer-p {
@@ -12822,4 +12821,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
 
 .form-table {
     display: inline-block;
+}
+
+.text-center {
+    text-align: center;
 }

@@ -27,7 +27,7 @@
                             <a href="{{route('home')}}">Главное</a>
                         </li>
                         <li>
-                            <a href="#offers">Офферы</a>
+                            <a href="/offers">Офферы</a>
                         </li>
                         <li>
                             <a class="singUp" role="button" data-toggle="modal" data-target="#login-modal">Регистрация</a>

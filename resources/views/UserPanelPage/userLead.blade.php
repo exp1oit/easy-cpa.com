@@ -17,11 +17,8 @@
                                     <div class="card table-card">
                                         <div class="card-header">
                                             <div class="row">
-                                                <div class="col-md-8">
+                                                <div class="col-md-12">
                                                 <h3 class>Лиды</h3>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <a href="/lead/create" class='right'><button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-plus"></i></button></a>
                                             </div>
                                             </div>
                                         </div>
@@ -30,7 +27,6 @@
                                                 <table class="table table-hover m-b-0">
                                                     <thead>
                                                         <tr>
-                                                            <th>id</th>
                                                             <th>Имя</th>
                                                             <th>Телефон</th>
                                                             <th>Email</th>
@@ -44,7 +40,6 @@
                                                     <tbody>
                                                         @foreach  ($leads as $lead)
                                                             <tr>
-                                                                <td>{{ $lead->id }}</td>
                                                                 <td>{{ $lead->name}}</td>
                                                                 <td>{{ $lead->phone ? $lead->phone  : 'Не указан' }}</td>
                                                                 <td>{{ $lead->email }}</td>

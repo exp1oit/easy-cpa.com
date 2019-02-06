@@ -19,6 +19,9 @@
 <script src="{{ asset('js/panel/serial.js') }}"></script>
 <script src="{{ asset('js/panel/light.js') }}"></script>
 
+<script src="{{ asset('js/panel/owl-custom.js') }}"></script>
+<script src="{{ asset('js/panel/owl.carousel.min.js') }}"></script>
+
 <script src="{{ asset('js/panel/pcoded.min.js') }}"></script>
 <script src="{{ asset('js/panel/vertical-layout.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/panel/custom-dashboard.min.js') }}"></script>

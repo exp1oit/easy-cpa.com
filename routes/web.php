@@ -36,9 +36,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('lead', 'LeadController');
 
-    Route::resource('offer', 'OfferController');
+    Route::resource('offer', 'OfferController')->except(['index', 'show']);;
 
     Route::get('/offer/{offer_id}/lead', 'LeadController@create');
 });
+
+Route::get('/offers', 'OfferController@index');
+
+Route::get('/offer/{offer}', 'OfferController@show');
 
 // Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');

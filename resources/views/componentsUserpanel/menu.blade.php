@@ -5,23 +5,33 @@
             <div class="pcoded-inner-navbar main-menu" style="overflow: hidden; width: 100%; height: 100%;">
                 <div class="pcoded-navigation-label" menu-title-theme="theme1">Меню</div>
                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                    @if(!Auth::check())
+                        <li class=" ">
+                            <a href="{{ route('home') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-feather"></i>
+                                </span>
+                                <span class="pcoded-mtext">Главное</span>
+                            </a>
+                        </li>
+                    @endif
                     <li class=" ">
-                        <a href="{{ route('offer.index') }}" class="waves-effect waves-dark">
+                        <a href="/offers" class="waves-effect waves-dark">
                             <span class="pcoded-micon">
                                 <i class="feather icon-feather"></i>
                             </span>
                             <span class="pcoded-mtext">Все офферы</span>
                         </a>
                     </li>
-                    <li class=" ">
-                        <a href="{{ route('offer.create') }}" class="waves-effect waves-dark">
-                            <span class="pcoded-micon">
-                                <i class="feather icon-feather"></i>
-                            </span>
-                            <span class="pcoded-mtext">Создать оффер</span>
-                        </a>
-                    </li>
                     @if (Auth::check())
+                        <li class=" ">
+                            <a href="{{ route('offer.create') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-feather"></i>
+                                </span>
+                                <span class="pcoded-mtext">Создать оффер</span>
+                            </a>
+                        </li>
                         <li class=" ">
                             <a href="/user/my-offers" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">

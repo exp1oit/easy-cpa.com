@@ -19,9 +19,9 @@
                                     <div class="col-md-12">
                                         <div class="card table-card">
                                             <div class="card-header">
-                                                <h2>{{$offer->title}}</h2>
+                                                <h2 class='text-center'>{{$offer->title}}</h2>
                                                 <p>
-                                                    {{$offer->condition}}
+                                                    Статус: {{$offer->condition}}
                                                 </p>
                                             </div>
                                             <div class="card-block">
@@ -65,17 +65,19 @@
                                                                     </tbody>
                                                                 </table>
                                                             </div>  --}}
-
-                                                            <div class='center'>
-                                                                <a href="/offer/{{$offer->id}}/lead">
-                                                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="primary-popover-content">
-                                                                        Довить лид к данному офферу
-                                                                    </button>
-                                                                </a>
-                                                            </div>
+                                                        
+                                                            @if (Auth::check())
+                                                                <div class='center'>
+                                                                    <a href="/offer/{{$offer->id}}/lead">
+                                                                        <button type="button" class="btn btn-primary waves-effect waves-light" id="primary-popover-content">
+                                                                            Добавить лид к данному офферу
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            @endif
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <img class="offer-img" src="{{ asset('/img/timehard.jpg') }}" alt="">
+                                                            <img class="offer-img" src="{{ asset($offer->images()->first()->path) }}" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -95,38 +97,17 @@
                                                 <div class="table-responsive">
                                                     <table class="table table-hover m-b-0 without-header">
                                                         <tbody>
-                                                            <tr>
+                                                            @foreach ( $offer->rewards()->get() as $reward )
+                                                                <tr>
                                                                 <td>
-                                                                    <h3>{{ $offer->amount[0]['amount'] }}</h3>
+                                                                    <h3>{{ $reward->amount }}</h3>
                                                                 </td>
                                                                 <td>
                                                                     <p>Engagement</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>
-                                                                    <h3>480</h3>
-                                                                </td>
-                                                                <td>
-                                                                    <p>Likes</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <h3>230</h3>
-                                                                </td>
-                                                                <td>
-                                                                    <p>Clicks</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <h3>480</h3>
-                                                                </td>
-                                                                <td>
-                                                                    <p>Likes</p>
-                                                                </td>
-                                                            </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
