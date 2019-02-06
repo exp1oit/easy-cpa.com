@@ -77,7 +77,9 @@
                                                             @endif
                                                         </div>
                                                         <div class="col-md-3">
+                                                            @if ($offer->images()->first())
                                                             <img class="offer-img" src="{{ asset($offer->images()->first()->path) }}" alt="">
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
