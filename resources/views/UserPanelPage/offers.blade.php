@@ -39,8 +39,10 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="d-inline-block align-middle">
-                                                                        <img src="{{ asset($offer->images()->first()->path) }}" alt="user image"
-                                                                            class="img-radius img-80 align-top m-r-30">
+                                                                        @if ($offer->images()->first())
+                                                                            <img src="{{ asset($offer->images()->first()->path) }}" alt="user image"
+                                                                                class="img-radius img-80 align-top m-r-30">
+                                                                        @endif
                                                                         <div class="d-inline-block">
                                                                             <a href="offer/{{$offer->id}}"> <h6>{{$offer->title}}</h6>
                                                                                 <p class="text-muted m-b-0">Sales executive ,

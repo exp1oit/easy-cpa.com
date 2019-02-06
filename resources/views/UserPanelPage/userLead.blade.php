@@ -44,8 +44,8 @@
                                                                 <td>
                                                                     <div class="d-inline-block align-middle">
                                                                         @if($lead->images()->first())
-                                                                        <img src="{{  asset($lead->images()->first()->path) }}" alt="user image"
-                                                                            class="img-radius img-80 align-top m-r-30">
+                                                                            <img src="{{  asset($lead->images()->first()->path) }}" alt="user image"
+                                                                                class="img-radius img-80 align-top m-r-30">
                                                                         @endif
                                                                     </div>
                                                                 </td>
