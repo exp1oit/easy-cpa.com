@@ -12,7 +12,7 @@ class LeadImage extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'offer_id', 'path'
+        'user_id', 'lead_id', 'path'
     ];
 
     /**

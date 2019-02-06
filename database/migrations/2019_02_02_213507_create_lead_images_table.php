@@ -17,13 +17,13 @@ class CreateLeadImagesTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->integer('user_id')->nullable()->unsigned();
-            $table->integer('offer_id')->unsigned()->nullable();
+            $table->integer('lead_id')->unsigned()->nullable();
             $table->timestamps();
         });
 
         Schema::table('lead_images', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
+            $table->foreign('lead_id')->references('id')->on('leads')->onDelete('cascade');
         });
     }
 
@@ -36,7 +36,7 @@ class CreateLeadImagesTable extends Migration
     {
         Schema::table('lead_images', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
-            $table->dropForeign(['offer_id']);
+            $table->dropForeign(['lead_id']);
         });
         Schema::dropIfExists('lead_images');
     }

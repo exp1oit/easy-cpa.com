@@ -34,8 +34,8 @@ class Lead extends Model
         return $this->belongsTo('App\Models\Offer');
     }
 
-    // public function images()
-    // {
-    //     return $this->hasMany('App\Models\OfferImage');
-    // }
+    public function images()
+    {
+        return $this->hasMany('App\Models\LeadImage');
+    }
 }

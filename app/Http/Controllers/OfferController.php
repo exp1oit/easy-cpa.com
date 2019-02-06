@@ -7,6 +7,7 @@ use App\Models\Offer;
 use App\Models\Reward;
 use App\Models\OfferImage;
 use Illuminate\Http\Request;
+use File;
 
 class OfferController extends Controller
 {
@@ -64,7 +65,7 @@ class OfferController extends Controller
         }
         
 
-        return redirect()->route('offer.index');
+        return redirect()->route('offers');
     }
 
     /**
@@ -100,7 +101,7 @@ class OfferController extends Controller
     {
         $offer->update($request->all());
 
-        return redirect()->route('offer.index');
+        return redirect()->route('offers');
     }
 
     /**
@@ -111,9 +112,15 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
+        $images = $offer->images()->get();
+        
+        foreach ($images as $img) {
+            File::delete(public_path() . $img->path);
+        }
+
         $offer->delete();
 
-        return redirect()->route('offer.index');
+        return redirect()->route('offers');
     }
 
     // public function offerUser()

@@ -59,6 +59,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Добавления картинок (первая картинка будет основной)</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="file"  name="filename[]" class="form-control" multiple>
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-sm-2"></label>
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-primary m-b-0">Создать лид</button>

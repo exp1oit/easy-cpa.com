@@ -41,7 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/offer/{offer_id}/lead', 'LeadController@create');
 });
 
-Route::get('/offers', 'OfferController@index');
+Route::get('/offers', 'OfferController@index')->name('offers');
 
 Route::get('/offer/{offer}', 'OfferController@show');
 

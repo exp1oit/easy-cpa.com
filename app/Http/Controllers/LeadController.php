@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use App\Models\LeadImage;
 use Illuminate\Http\Request;
+use File;
 
 class LeadController extends Controller
 {
@@ -37,9 +39,26 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        Lead::create($request->all());
+        $lead = Lead::create($request->all());
 
-        return redirect()->route('offer.index');
+        if ($request->hasfile('filename')) {
+            foreach ($request->file('filename') as $file) {
+                $name_file = $file->getClientOriginalName();
+                $path = '/files/leads/' . $lead->id . '/';
+
+                $file->move(public_path() . $path, $name_file);  
+
+                $path .= "$name_file";
+
+                LeadImage::create([
+                    'path'    => $path,
+                    'lead_id' => $lead->id,
+                    'user_id' => $lead->user_id
+                ]);
+            }
+        }
+
+        return redirect()->route('offers');
     }
 
     /**
@@ -86,6 +105,12 @@ class LeadController extends Controller
      */
     public function destroy(Lead $lead)
     {
+        $images = $lead->images()->get();
+        
+        foreach ($images as $img) {
+            File::delete(public_path() . $img->path);
+        }
+
         $lead->delete();
 
         return redirect()->route('lead.index');

@@ -27,6 +27,7 @@
                                                 <table class="table table-hover m-b-0">
                                                     <thead>
                                                         <tr>
+                                                            <th></th>
                                                             <th>Имя</th>
                                                             <th>Телефон</th>
                                                             <th>Email</th>
@@ -40,6 +41,14 @@
                                                     <tbody>
                                                         @foreach  ($leads as $lead)
                                                             <tr>
+                                                                <td>
+                                                                    <div class="d-inline-block align-middle">
+                                                                        @if($lead->images()->first())
+                                                                        <img src="{{  asset($lead->images()->first()->path) }}" alt="user image"
+                                                                            class="img-radius img-80 align-top m-r-30">
+                                                                        @endif
+                                                                    </div>
+                                                                </td>
                                                                 <td>{{ $lead->name}}</td>
                                                                 <td>{{ $lead->phone ? $lead->phone  : 'Не указан' }}</td>
                                                                 <td>{{ $lead->email }}</td>
