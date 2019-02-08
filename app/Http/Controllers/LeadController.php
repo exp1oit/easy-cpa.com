@@ -43,8 +43,8 @@ class LeadController extends Controller
 
         if ($request->hasfile('filename')) {
             foreach ($request->file('filename') as $file) {
-                $name_file = $file->getClientOriginalName();
-                $path = '/files/leads/' . $lead->id . '/';
+                $name_file = uniqid() . '.' . File::extension($file->getClientOriginalName());
+                $path = '/img/leads/';
 
                 $file->move(public_path() . $path, $name_file);  
 
@@ -93,6 +93,23 @@ class LeadController extends Controller
     public function update(Request $request, Lead $lead)
     {
         $lead->update($request->all());
+
+        if ($request->hasfile('filename')) {
+            foreach ($request->file('filename') as $file) {
+                $name_file = uniqid() . '.' . File::extension($file->getClientOriginalName());
+                $path = '/img/leads/';
+
+                $file->move(public_path() . $path, $name_file);  
+
+                $path .= "$name_file";
+
+                LeadImage::create([
+                    'path'    => $path,
+                    'lead_id' => $lead->id,
+                    'user_id' => $lead->user_id
+                ]);
+            }
+        }
 
         return redirect()->route('user-leads');
     }

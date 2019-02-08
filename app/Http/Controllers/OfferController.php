@@ -50,8 +50,8 @@ class OfferController extends Controller
 
         if ($request->hasfile('filename')) {
             foreach ($request->file('filename') as $file) {
-                $name_file = $file->getClientOriginalName();
-                $path = '/files/' . $offer->id . '/';
+                $name_file = uniqid() . '.' . File::extension($file->getClientOriginalName());
+                $path = '/img/offers/';
 
                 $file->move(public_path() . $path, $name_file);  
 
@@ -87,7 +87,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        return view('AdminPanelPage.offerUpdateForm');
+        return view('UserPanelPage.offerUpdateForm')->with('offer', $offer);
     }
 
     /**
@@ -100,6 +100,22 @@ class OfferController extends Controller
     public function update(Request $request, Offer $offer)
     {
         $offer->update($request->all());
+
+        if ($request->hasfile('filename')) {
+            foreach ($request->file('filename') as $file) {
+                $name_file = uniqid() . '.' . File::extension($file->getClientOriginalName());
+                $path = '/img/offers/';
+
+                $file->move(public_path() . $path, $name_file);  
+
+                $path .= "$name_file";
+
+                OfferImage::create([
+                    'path' => $path,
+                    'offer_id' => $offer->id
+                ]);
+            }
+        }
 
         return redirect()->route('offers');
     }

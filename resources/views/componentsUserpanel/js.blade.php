@@ -27,7 +27,7 @@
 <script type="text/javascript" src="{{ asset('js/panel/custom-dashboard.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/panel/script.min.js') }}"></script>
 
-<script async="" src="{{ asset('js/panel/js.js') }}"></script>
+<script type="text/javascript" async="" src="{{ asset('js/panel/js.js') }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -39,3 +39,5 @@
     gtag('config', 'UA-23581568-13');
 
 </script>
+
+<script type="text/javascript" src="{{ asset('js/panel/ajax-delete-img.js') }}"></script>

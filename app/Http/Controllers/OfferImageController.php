@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OfferImage;
 use Illuminate\Http\Request;
+use File;
 
 class OfferImageController extends Controller
 {
@@ -81,5 +82,19 @@ class OfferImageController extends Controller
     public function destroy(OfferImage $offerImage)
     {
         //
+    }
+
+    public function deleteImgAjax(Request $request)
+    {
+        $path = $request->src;
+
+        $img = OfferImage::where('path', $path)->first();
+        
+        File::delete(public_path() . $img->path);
+
+        $img->delete();
+
+        return response()->json(['status' => 'done']);
+        
     }
 }

@@ -46,3 +46,8 @@ Route::get('/offers', 'OfferController@index')->name('offers');
 Route::get('/offer/{offer}', 'OfferController@show');
 
 // Route::get('/users', "OffestsController@index")->name('users')->middleware('verified');
+
+// Route for delete ajax
+Route::post('/lead-image', 'LeadImageController@deleteImgAjax');
+
+Route::post('/offer-image', 'OfferImageController@deleteImgAjax');

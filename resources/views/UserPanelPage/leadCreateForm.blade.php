@@ -15,7 +15,7 @@
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3>Форма лида</h3>
+                                            <h3>Форма создания лида</h3>
                                         </div>
                                         <div class="card-block">
                                             <form id="main" method="post" action="{{ route('lead.store') }}" novalidate="" enctype="multipart/form-data">

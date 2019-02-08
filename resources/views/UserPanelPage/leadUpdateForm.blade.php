@@ -15,10 +15,10 @@
                                 <div class="col-sm-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3>Форма лида</h3>
+                                            <h3>Форма редактирования лида</h3>
                                         </div>
                                         <div class="card-block">
-                                            <form id="main" method="post" action="/lead/{{ $lead->id }}" novalidate="">
+                                            <form id="main" method="post" action="/lead/{{ $lead->id }}" enctype="multipart/form-data">
                                                 @method('PUT')
                                                 @csrf
                                                 <input type="hidden" name="user_id" value="{{ $lead->user_id }}" hidden>
@@ -56,6 +56,36 @@
                                                     <div class="col-sm-10">
                                                         <textarea rows="5" cols="5" class="form-control" placeholder="Введете информацию по лиду"
                                                          name="comment">{{ $lead->comment }}</textarea>
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                </div>
+                                                @if ($lead->images()->first())
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Уже сохранёные изображения</label>
+                                                        <div class="col-sm-10">
+                                                            <ul class="nav-right">
+                                                                @foreach ($lead->images()->get() as $img)
+                                                                    <li class='form-img-list'>
+                                                                        <div class="label-icon">
+                                                                            <img class='img-fluid img-180 m-r-15 m-b-10' src="{{ $img->path }}" alt="">
+                                                                            <label class="delete-ajax-form-lead badge badge-primary badge-top-right offer-update-form-img-close">
+                                                                                <font style="vertical-align: inherit;" class='offer-update-icon'>
+                                                                                    <i class='feather icon-x'></i>
+                                                                                </font>
+                                                                            </label>
+                                                                        </div>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                            <span class="messages" id="messages-img-delete"></span>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Добавления ещё картин</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="file" name="filename[]" class="form-control"
+                                                            multiple>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>

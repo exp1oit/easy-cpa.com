@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use App\Models\LeadImage;
 use Illuminate\Http\Request;
 
@@ -81,5 +82,20 @@ class LeadImageController extends Controller
     public function destroy(LeadImage $leadImage)
     {
         //
+    }
+
+
+    public function deleteImgAjax(Request $request)
+    {
+        $path = $request->src;
+
+        $img = LeadImage::where('path', $path)->first();
+        
+        File::delete(public_path() . $img->path);
+
+        $img->delete();
+
+        return response()->json(['status' => 'done']);
+        
     }
 }
