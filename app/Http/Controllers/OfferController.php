@@ -134,6 +134,12 @@ class OfferController extends Controller
             File::delete(public_path() . $img->path);
         }
 
+        foreach ($offer->leads()->get() as $lead) {
+            foreach($lead->images()->get() as $img) {
+                File::delete(public_path() . $img->path);
+            }
+        }
+
         $offer->delete();
 
         return redirect()->route('offers');
