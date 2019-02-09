@@ -22,14 +22,14 @@ class CreateLeadsTable extends Migration
             $table->string('email')->nullable();
             $table->text('comment')->nullable();
             $table->float('reward',8,2)->nullable()->unsigned();
-            //$table->integer('status_id')->nullable()->unsigned();
+            $table->integer('status_id')->nullable()->unsigned();
             $table->timestamps();
         });
 
         Schema::table('leads', function (Blueprint $table) {
             $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //$table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('status_id')->references('id')->on('lead_statuses');
         });
     }
 
@@ -43,7 +43,7 @@ class CreateLeadsTable extends Migration
         Schema::table('leads', function (Blueprint $table) {
             $table->dropForeign(['offer_id']);
             $table->dropForeign(['user_id']);
-            //$table->dropForeign(['status_id']);
+            $table->dropForeign(['status_id']);
         });
         Schema::dropIfExists('leads');
     }

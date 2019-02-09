@@ -15,6 +15,7 @@ class CreateRewardsTable extends Migration
     {
         Schema::create('rewards', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
             $table->integer('amount');
             $table->integer('offer_id')->unsigned()->nullable();
             $table->timestamps();
