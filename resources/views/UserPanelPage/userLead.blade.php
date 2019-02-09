@@ -51,8 +51,8 @@
                                                                 </td>
                                                                 <td>{{ $lead->name}}</td>
                                                                 <td>{{ $lead->phone ? $lead->phone  : 'Не указан' }}</td>
-                                                                <td>{{ $lead->email }}</td>
-                                                                <td>{{ $lead->comment }}</td>
+                                                                <td>{{ $lead->email ? $lead->email : 'Не указан' }}</td>
+                                                                <td>{{ $lead->comment ? $lead->comment : 'Не указан' }}</td>
                                                                 <td>{{ $lead->reward }}</td>
                                                                 <td>{{ $lead->created_at }}</td>
                                                                 <td>{{ $lead->updated_at }}</td>
