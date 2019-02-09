@@ -43,7 +43,7 @@
                                                                                 class="img-radius img-80 align-top m-r-30">
                                                                         @endif
                                                                         <div class="d-inline-block">
-                                                                            <a href="offer/{{$offer->id}}"> <h6>{{$offer->title}}</h6>
+                                                                            <a href="/offer/{{$offer->id}}"> <h6>{{$offer->title}}</h6>
                                                                                 <p class="text-muted m-b-0">Sales executive ,
                                                                                     NY</p>
                                                                             </a>

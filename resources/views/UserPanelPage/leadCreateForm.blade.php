@@ -21,11 +21,11 @@
                                             <form id="main" method="post" action="{{ route('lead.store') }}" novalidate="" enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="hidden" name="user_id" value="{{Auth::id() ? Auth::id() : null}}" hidden>
-                                                <input type="hidden" name="offer_id" value="{{$offer_id}}" hidden>
+                                                <input type="hidden" name="offer_id" value="{{$offer->id}}" hidden>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Имя</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="name" name="name">
+                                                        <input type="text" class="form-control" id="name" name="name" required>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
@@ -39,7 +39,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Цена</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" class="form-control" id="reward" name="reward">
+                                                        <input type="number" class="form-control" id="reward" name="reward" value="{{$offer->rewards()->first()->amount}}" required readonly>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>

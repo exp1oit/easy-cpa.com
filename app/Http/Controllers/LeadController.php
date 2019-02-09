@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use App\Models\Offer;
 use App\Models\LeadImage;
 use Illuminate\Http\Request;
 use File;
@@ -28,7 +29,9 @@ class LeadController extends Controller
      */
     public function create($offer_id)
     {
-        return view('UserPanelPage.leadCreateForm')->with('offer_id', $offer_id);
+        $offer = Offer::find($offer_id);
+
+        return view('UserPanelPage.leadCreateForm')->with('offer', $offer);
     }
 
     /**
