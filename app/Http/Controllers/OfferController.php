@@ -6,6 +6,7 @@ use Auth;
 use App\Models\Offer;
 use App\Models\Reward;
 use App\Models\OfferImage;
+use App\Models\OfferStatus;
 use Illuminate\Http\Request;
 use File;
 
@@ -41,10 +42,13 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        $offer = Offer::create($request->all());
+        $offer = $request->all();
+        $offer['status_id'] = 1;
+        $offer = Offer::create($offer);
         
         Reward::create([
             'offer_id' => $offer->id,
+            'title' => $request->title_amount,
             'amount' => $request->amount
         ]);
 

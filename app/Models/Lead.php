@@ -38,4 +38,9 @@ class Lead extends Model
     {
         return $this->hasMany('App\Models\LeadImage');
     }
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\LeadStatus');
+    }
 }

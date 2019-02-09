@@ -34,8 +34,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Рекламный материал</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="promo" name="promo"
-                                                            value="{{ $offer->promo }}">
+                                                        <textarea rows="5" cols="5" class="form-control" name="promo">{{ $offer->promo }}</textarea>    
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
@@ -50,8 +49,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Состояние</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="condition" name="condition"
-                                                            value="{{ $offer->condition }}">
+                                                        <textarea rows="5" cols="5" class="form-control" name="condition">{{ $offer->condition }}</textarea>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>

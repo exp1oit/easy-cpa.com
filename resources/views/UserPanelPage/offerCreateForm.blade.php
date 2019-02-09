@@ -29,9 +29,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Рекламный материал</label>
+                                                    <label class="col-sm-2 col-form-label">Условие для успешной выплаты</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="promo" name="promo" required>
+                                                        <input type="text" class="form-control" id="title_amount" name="title_amount" required>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>
@@ -43,9 +43,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Рекламный материал</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea rows="5" cols="5" class="form-control" placeholder="Введете информацию по офферу"
+                                                        name="promo" required></textarea>
+                                                        <span class="messages"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Состояние</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="condition" name="condition" required>
+                                                        <textarea rows="5" cols="5" class="form-control" placeholder="Введете информацию по офферу"
+                                                        name="condition" required></textarea>
                                                         <span class="messages"></span>
                                                     </div>
                                                 </div>

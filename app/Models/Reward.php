@@ -12,7 +12,7 @@ class Reward extends Model
      * @var array
      */
     protected $fillable = [
-        'offer_id', 'amount'
+        'offer_id', 'title', 'amount'
     ];
 
     /**
