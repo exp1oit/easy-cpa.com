@@ -67,6 +67,9 @@
                                                                     <a href="/offer/{{$offer->id}}/edit">
                                                                         <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-edit"></i></button>
                                                                     </a>
+                                                                    <a href="/offer/{{$offer->id}}/leads/">
+                                                                        <button class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon"><i class="icofont icofont-ui-user-group"></i></button>
+                                                                    </a>
                                                                     <form class="form-table" method='POST'  action="/offer/{{$offer->id}}">
                                                                         @method('DELETE')
                                                                         @csrf

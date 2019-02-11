@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use File;
 use App\Models\Lead;
 use App\Models\Offer;
 use App\Models\LeadImage;
 use Illuminate\Http\Request;
-use File;
 
 class LeadController extends Controller
 {
@@ -136,5 +137,11 @@ class LeadController extends Controller
         $lead->delete();
 
         return redirect()->route('lead.index');
+    }
+
+    public function updateOfferUserLead(Request $request, Lead $lead) {
+        $lead->update($request->all());
+
+        return response('Success', 200);
     }
 }

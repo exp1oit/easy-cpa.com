@@ -14,9 +14,10 @@ class OfferStatusesTableSeeder extends Seeder
     {
         DB::table('offer_statuses')
         	->insert([
-        	['name'=>"Новый"],
+            ['name'=>"Новый"],
+            ['name'=>"Действующий"],
         	['name'=>"На паузе"],
-			['name'=>"Выполненный"]
+			['name'=>"Закрытый"],
 		]);
     }
 }

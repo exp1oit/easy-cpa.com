@@ -39,6 +39,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('offer', 'OfferController')->except(['index', 'show']);;
 
     Route::get('/offer/{offer_id}/lead', 'LeadController@create');
+
+    Route::get('/offer/{offer}/leads', 'OfferController@offerUserLeads');
+
+    Route::put('/offer/leads/{lead}/update', 'LeadController@updateOfferUserLead');
 });
 
 Route::get('/offers', 'OfferController@index')->name('offers');

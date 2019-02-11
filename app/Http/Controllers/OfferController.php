@@ -9,6 +9,7 @@ use App\Models\OfferImage;
 use App\Models\OfferStatus;
 use Illuminate\Http\Request;
 use File;
+use App\Models\LeadStatus;
 
 class OfferController extends Controller
 {
@@ -147,6 +148,20 @@ class OfferController extends Controller
         $offer->delete();
 
         return redirect()->route('offers');
+    }
+
+    public function offerUserLeads(Offer $offer)
+    {
+        if (Auth::id() !== $offer->user_id) {
+            // gen error
+        }
+        
+        $statusLead = LeadStatus::all();
+
+        return view('UserPanelPage.userOfferLeads')->with([
+                'offer'      => $offer,
+                'statusLead' => $statusLead,
+            ]);
     }
 
     // public function offerUser()
