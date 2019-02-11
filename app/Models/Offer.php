@@ -12,7 +12,7 @@ class Offer extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'title', 'rating', 'description', 'promo', 'condition'
+        'user_id', 'title', 'status_id', 'rating', 'description', 'promo', 'condition'
     ];
 
     /**
@@ -42,5 +42,10 @@ class Offer extends Model
     public function rewards()
     {
         return $this->hasMany('App\Models\Reward');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\OfferStatus');
     }
 }

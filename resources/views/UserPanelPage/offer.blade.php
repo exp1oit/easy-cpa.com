@@ -21,7 +21,7 @@
                                             <div class="card-header">
                                                 <h2 class='text-center'>{{$offer->title}}</h2>
                                                 <p>
-                                                    Статус: {{$offer->condition}}
+                                                    Статус: {{$offer->status()->first()->name}}
                                                 </p>
                                             </div>
                                             <div class="card-block">
@@ -35,6 +35,10 @@
                                                             <h3>Правило оффера</h3>
                                                             <p class="text-offer-p">
                                                                 {{$offer->promo}}
+                                                            </p>
+                                                            <h1>Condition</h1>
+                                                            <p class="text-offer-p">
+                                                                {{$offer->condition}}
                                                             </p>
                                                             {{--  <h3>Показатели конверсий</h3>
                                                             <div class="table-responsive">
@@ -105,7 +109,7 @@
                                                                     <h3>{{ $reward->amount }}</h3>
                                                                 </td>
                                                                 <td>
-                                                                    <p>Engagement</p>
+                                                                    <p>{{ $reward->title }}</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>

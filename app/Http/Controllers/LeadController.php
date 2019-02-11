@@ -41,8 +41,10 @@ class LeadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $lead = Lead::create($request->all());
+    {   
+        $lead = $request->all();
+        $lead['status_id'] = 1;
+        $lead = Lead::create($lead);
 
         if ($request->hasfile('filename')) {
             foreach ($request->file('filename') as $file) {
