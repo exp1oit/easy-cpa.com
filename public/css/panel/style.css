@@ -9365,7 +9365,7 @@ body.horizontal-icon-fixed .pcoded[pcoded-device-type=desktop] .pcoded-navbar .p
 }
 
 .select2-container {
-    width: 100%
+    width: 100% !important
 }
 
 .form-group {

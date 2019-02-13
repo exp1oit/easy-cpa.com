@@ -42,3 +42,5 @@
 
 <script type="text/javascript" src="{{ asset('js/panel/ajax-delete-img.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/panel/ajax-user-offer-save.js') }}"></script>
+
+@yield('script')

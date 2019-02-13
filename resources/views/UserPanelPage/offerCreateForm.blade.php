@@ -29,6 +29,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Страны в который действует данный оффер</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="js-example-basic-multiple form-control" name="county[]" multiple="multiple" >
+                                                            @foreach ($contries as $contry)
+                                                                <option value="{{ $contry->id }}">{{ $contry->country_name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Условие для успешной выплаты</label>
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control" id="title_amount" name="title_amount" required>
@@ -96,4 +106,19 @@
     </div>
 
 </div>
+@stop
+
+
+@section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+@stop
+
+@section('style')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 @stop

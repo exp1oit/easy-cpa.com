@@ -21,8 +21,8 @@ class CreateCountryOfferTable extends Migration
         });
 
         Schema::table('country_offer', function (Blueprint $table) {
-            $table->foreign('country_id')->references("id")->on('countries');
-            $table->foreign('offer_id')->references("id")->on('offers');
+            $table->foreign('country_id')->references("id")->on('countries')->onDelete('cascade');
+            $table->foreign('offer_id')->references("id")->on('offers')->onDelete('cascade');
         });
     }
 

@@ -48,4 +48,9 @@ class Offer extends Model
     {
         return $this->belongsTo('App\Models\OfferStatus');
     }
+
+    public function countries()
+    {
+        return $this->belongsToMany('App\Models\Country')->withTimestamps();;
+    }
 }

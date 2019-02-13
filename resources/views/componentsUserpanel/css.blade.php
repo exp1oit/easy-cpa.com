@@ -10,3 +10,5 @@
 <link rel="stylesheet" href="{{asset('css/panel/icofont.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/panel/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{asset('css/panel/owl.theme.default.css')}}">
+
+@yield('style')

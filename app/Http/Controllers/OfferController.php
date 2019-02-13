@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use File;
 use App\Models\Offer;
 use App\Models\Reward;
+use App\Models\Country;
 use App\Models\OfferImage;
 use App\Models\OfferStatus;
-use Illuminate\Http\Request;
-use File;
 use App\Models\LeadStatus;
+use Illuminate\Http\Request;
 
 class OfferController extends Controller
 {
@@ -32,7 +33,9 @@ class OfferController extends Controller
      */
     public function create()
     {
-        return view('UserPanelPage.offerCreateForm');
+        $contries = Country::all();
+
+        return view('UserPanelPage.offerCreateForm')->with('contries', $contries);
     }
 
     /**
@@ -47,6 +50,8 @@ class OfferController extends Controller
         $offer['status_id'] = 1;
         $offer = Offer::create($offer);
         
+        $offer->countries()->attach($request->county);
+
         Reward::create([
             'offer_id' => $offer->id,
             'title' => $request->title_amount,
@@ -92,7 +97,18 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        return view('UserPanelPage.offerUpdateForm')->with('offer', $offer);
+        $contries = Country::all();
+
+        $offerContries = [];
+        foreach ($offer->countries as $contry) {
+            $offerContries[] = $contry->pivot->country_id;
+        }
+
+        return view('UserPanelPage.offerUpdateForm')->with([
+            'offer'         => $offer,
+            'contries'      => $contries,
+            'offerContries' => $offerContries,
+        ]);
     }
 
     /**
@@ -105,6 +121,8 @@ class OfferController extends Controller
     public function update(Request $request, Offer $offer)
     {
         $offer->update($request->all());
+
+        $offer->countries()->sync($request->county);
 
         if ($request->hasfile('filename')) {
             foreach ($request->file('filename') as $file) {
