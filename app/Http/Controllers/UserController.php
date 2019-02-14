@@ -148,7 +148,7 @@ class UserController extends Controller
 
     public function myOffer()
     {
-        $offers = Auth::user()->offers()->get();
+        $offers = Auth::user()->offers()->nostatus()->get();
         
         return view('UserPanelPage.userOffers')->with('offers', $offers);
     }

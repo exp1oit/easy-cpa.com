@@ -57,11 +57,15 @@
                                                                     asdsadsadsad
                                                                 </td>
                                                                 <td>
-                                                                    <ul>
-                                                                        <li>1</li>
-                                                                        <li>2</li>
-                                                                        <li>3</li>
-                                                                    </ul>
+                                                                     @if($offer->countries()->count() > 0)
+                                                                        <ol>
+                                                                            @foreach ($offer->countries as $country)
+                                                                                <li>{{ $country->country_name}}</li>
+                                                                            @endforeach
+                                                                        </ol>
+                                                                    @else
+                                                                        Нету
+                                                                    @endif
                                                                 </td>
                                                                 <td>
                                                                     <a href="/offer/{{$offer->id}}/edit">
