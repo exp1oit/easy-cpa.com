@@ -53,4 +53,9 @@ class Offer extends Model
     {
         return $this->belongsToMany('App\Models\Country')->withTimestamps();;
     }
+
+    public function scopeNostatus($query)
+    {
+        return $query->where('status_id', '<', 4);
+    }
 }

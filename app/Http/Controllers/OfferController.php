@@ -21,7 +21,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
+        $offers = Offer::nostatus();
         
         return view('UserPanelPage.offers')->with('offers', $offers);
     }
@@ -151,19 +151,21 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        $images = $offer->images()->get();
+        // $images = $offer->images()->get();
         
-        foreach ($images as $img) {
-            File::delete(public_path() . $img->path);
-        }
+        // foreach ($images as $img) {
+        //     File::delete(public_path() . $img->path);
+        // }
 
-        foreach ($offer->leads()->get() as $lead) {
-            foreach($lead->images()->get() as $img) {
-                File::delete(public_path() . $img->path);
-            }
-        }
+        // foreach ($offer->leads()->get() as $lead) {
+        //     foreach($lead->images()->get() as $img) {
+        //         File::delete(public_path() . $img->path);
+        //     }
+        // }
 
-        $offer->delete();
+        // $offer->delete();
+        $offer->status_id = 4;
+        $offer->save();
 
         return redirect()->route('offers');
     }
